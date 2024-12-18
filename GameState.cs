@@ -10,6 +10,7 @@ using System.Drawing;
 using LabWo3;
 
 [Serializable]
+// Saving game
 public class GameState
 {
     public List<Cell> Board { get; set; }

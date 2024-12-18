@@ -5,12 +5,13 @@ using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
 
+// Cell of game
 
     namespace LabWo3
     {
         public enum CellType
         {
-            Start, Simple, Forward, Backward, Finish
+            Start, Simple, Forward, Backward, Finish, Null
         }
 
         public class Cell

@@ -30,7 +30,7 @@ namespace LabWo3
  
             InitializeBoardPictureBox();
             InitializePlayerFigures();
-            UpdatePlayerPositions();
+            DrawBoard();
         }
 
         public void OnRollDiceButtonClick(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace LabWo3
         public void Proccess_movement(int steps)
         {
             _model.MovePlayer(_model.Players[_model.CurrentPlayerIndex], steps);
-            UpdatePlayerPositions();
+            DrawBoard();
             var cell = _model.Board[_model.Players[_model.CurrentPlayerIndex].Position];
             HandleCellEvent(cell, _model.Players[_model.CurrentPlayerIndex]);
 
@@ -83,13 +83,6 @@ namespace LabWo3
             DrawBoard();
         }
 
-        private void UpdatePlayerPositions()
-        {
-      
-            DrawBoard(); 
-            
-        }
-
         private void DrawBoard()
         {
 
@@ -121,6 +114,10 @@ namespace LabWo3
                 case CellType.Finish:
                     _view.Annotate($"Победил {currentPlayer.Name} !!!!");
                     _view.EndGame();
+                    break;
+                case CellType.Null:
+                    _view.Annotate("Вы отправляетесь в начало доски.");
+                    Proccess_movement(currentPlayer.Position);
                     break;
                
             }

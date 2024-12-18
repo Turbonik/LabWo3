@@ -47,7 +47,6 @@ namespace LabWo3
 
         public CellType GetRandomCellType(int r)
         {
-
             if (r >= 1 & r <= 80)
                 return CellType.Simple;
             else if (r > 80 & r <= 90)
@@ -55,7 +54,6 @@ namespace LabWo3
             else if (r > 90 & r <= 100)
                 return CellType.Backward;
             return CellType.Backward;
-
         }
 
 
@@ -64,8 +62,8 @@ namespace LabWo3
             int cellWidth = 80;
             int cellHeight = 80;
             CellType cellType;
-            var random = new Random();
 
+            var random = new Random();
 
             Board.Add(new Cell("Старт", CellType.Start, new Rectangle(0, 0, cellWidth, cellHeight), GetCellColor(CellType.Start)));
             Board.Add(new Cell("", CellType.Simple, new Rectangle(0, cellHeight, cellWidth, cellHeight), GetCellColor(CellType.Simple)));
@@ -102,6 +100,11 @@ namespace LabWo3
                 cellType = GetRandomCellType(random.Next(1, 101));
                 Board.Add(new Cell($"", cellType, new Rectangle(cellWidth * 6, cellHeight * (8 - i), cellWidth, cellHeight), GetCellColor(cellType)));
             }
+            for (int i = 1; i < 5; ++i)
+            {
+                cellType = GetRandomCellType();
+            }
+
             Board.Add(new Cell($"Финиш", CellType.Finish, new Rectangle(cellWidth * 6, cellHeight * 3, cellWidth, cellHeight), GetCellColor(CellType.Finish)));
 
 

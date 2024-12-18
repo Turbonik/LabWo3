@@ -83,28 +83,6 @@ namespace LabWo3
 
 
 
-        public Image Draw_Players(List<Player> players, List<Cell> board, PictureBox _boardPictureBox)
-        {
-            Bitmap bmp = new Bitmap(_boardPictureBox.Width, _boardPictureBox.Height);
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-
-                int dif = 0;
-                foreach (var player in players)
-                {
-
-                    var cell = board[player.Position];
-
-                    var playerBounds = new Rectangle(cell.Bounds.X + 5, cell.Bounds.Y + 5 + dif, 20, 20);
-                    player.FigureBounds = playerBounds;
-                    g.FillRectangle(new SolidBrush(player.Color), player.FigureBounds);
-                    dif += 25;
-                }
-            }
-            _boardPictureBox.Image = bmp;
-            return _boardPictureBox.Image;
-        }
-
         public void Annotate(string message)
         {
             MessageBox.Show(message);
