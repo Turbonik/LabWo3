@@ -1,5 +1,4 @@
-﻿using LabWo3.WindowsFormsApp2;
-using LabWo3;
+﻿using LabWo3;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

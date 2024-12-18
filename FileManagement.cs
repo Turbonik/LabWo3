@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LabWo3
-{
+﻿
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -18,7 +11,7 @@ namespace LabWo3
     using System.Drawing;
     using Newtonsoft.Json;
 
-    namespace WindowsFormsApp2
+    namespace LabWo3
     {
         public static class FileManagement
         {
@@ -75,5 +68,3 @@ namespace LabWo3
             }
         }
     }
-
-}

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace WindowsFormsApp2
+namespace LabWo3
 {
     public partial class Form1 : Form
     {
